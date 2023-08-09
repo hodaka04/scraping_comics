@@ -3,6 +3,7 @@ import pandas as pd
 import re
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 import gspread
 from google.oauth2.service_account import Credentials
 import datetime
@@ -12,9 +13,9 @@ from gspread_dataframe import set_with_dataframe
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
 options.add_argument('--incognito')
-
+service = Service('chromedriver.exe')
 driver = webdriver.Chrome(
-    executable_path='chromedriver.exe',
+    service=service,
     options=options)
 
 # 削除対象の単語
