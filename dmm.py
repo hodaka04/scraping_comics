@@ -16,6 +16,8 @@ get_driver.install()
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
 options.add_argument('--incognito')
+options.add_argument('--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36')
+
 driver = webdriver.Chrome(options=options)
 
 # 削除対象の単語
@@ -27,7 +29,7 @@ url = 'https://book.dmm.com/gigatoon/'
 # スクレイピングの関数定義
 def ranking(url, unwanted_patterns):
     driver.get(url)
-    sleep(3)
+    sleep(5)
     html = driver.page_source
     sleep(1)
     soup = BeautifulSoup(html, 'html.parser')
