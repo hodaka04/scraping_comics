@@ -1,6 +1,6 @@
 from time import sleep
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from get_chrome_driver import GetChromeDriver
 import pandas as pd
 import re
 from bs4 import BeautifulSoup
@@ -11,16 +11,13 @@ from gspread_dataframe import set_with_dataframe
 import os
 
 # webdriverの設定
-current_dir = os.path.dirname(os.path.abspath(__file__))
-# chromedriverの相対パスを指定
-chromedriver_path = os.path.join(current_dir, 'chromedriver.exe')
+get_driver = GetChromeDriver()
+get_driver.install()
+
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
 options.add_argument('--incognito')
-service = Service(chromedriver_path)
-driver = webdriver.Chrome(
-    service=service,
-    options=options)
+driver = webdriver.Chrome(options=options)
 
 # 削除対象の単語
 unwanted_patterns = ['分冊版', 'モノクロ版', 'noicomi']
