@@ -28,6 +28,12 @@ jobs:
           pip install gspread-dataframe
           pip install selenium==4.1.0
           pip install bs4
+      - name: Download and use Linux chromedriver
+        run: |
+          wget https://chromedriver.storage.googleapis.com/115.0.5790.170/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          chmod +x chromedriver
+          mv chromedriver /usr/local/bin/
       - name: Run script
         run: |
          # 各種pythonファイルの実行
