@@ -30,7 +30,7 @@ jobs:
           pip install bs4
       - name: Download and use Linux chromedriver
         run: |
-          wget https://chromedriver.storage.googleapis.com/115.0.5790.170/chromedriver_linux64.zip
+          wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.170/linux64/chromedriver-linux64.zip
           unzip chromedriver_linux64.zip
           chmod +x chromedriver
           mv chromedriver /usr/local/bin/
