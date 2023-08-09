@@ -14,7 +14,7 @@ options.add_argument('--headless')
 options.add_argument('--incognito')
 
 driver = webdriver.Chrome(
-    executable_path='tools\chromedriver.exe',
+    executable_path='chromedriver.exe',
     options=options)
 
 # 削除対象の単語
