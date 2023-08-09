@@ -3,7 +3,8 @@ name: update
 
 # 発火タイミング
 on:
-  push:
+  schedule:
+    - cron: '0 00 * * *'
   
 
 jobs:
@@ -36,4 +37,4 @@ jobs:
          # 各種pythonファイルの実行
           python ameba.py
           python cmoa.py
-          python dmm.py
+          python ebookjapan.py
