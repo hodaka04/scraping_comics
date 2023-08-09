@@ -71,7 +71,7 @@ html_files = ['ameba_1.html', 'ameba_mens.html']
 
 # ランキングスクレイピングの関数定義
 def ranking(html, unwanted_patterns):
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
     comics = soup.select('ul.sc-p9znnp-0 > li')
     comics_ranking10 = comics[:10]
     sleep(1)
@@ -101,7 +101,7 @@ def ranking(html, unwanted_patterns):
 
 # 注目マンガスクレイピングの関数定義
 def listup(html, unwanted_patterns):
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
     comics = soup.select('ul.sc-p9znnp-0')
     check_comics = comics[1]
     commercial_commics = comics[4]

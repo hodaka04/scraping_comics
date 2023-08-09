@@ -31,7 +31,7 @@ def ranking(url, unwanted_patterns):
     sleep(3)
     html = driver.page_source
     sleep(1)
-    soup = BeautifulSoup(html, 'lxml')
+    soup = BeautifulSoup(html, 'html.parser')
     comics_lists = []
     ichioshi_comics = soup.select('ul.css-1mhm924 > li')[:15]
     sleep(1)

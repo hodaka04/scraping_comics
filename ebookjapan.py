@@ -39,7 +39,7 @@ def remove_text_after_keyword(text, keyword):
 def ranking(url, unwanted_patterns):
     r = requests.get(url)
     sleep(1)
-    soup = BeautifulSoup(r.content, 'lxml')
+    soup = BeautifulSoup(r.content, 'html.parser')
 
     # 同じクラス名を持つdivタグのリストを取得
     ul_elements = soup.select('ul.slider-body__list')
@@ -63,7 +63,7 @@ def ranking(url, unwanted_patterns):
     for comic_url in comic_url_list:
         comic_r = requests.get(comic_url)
         sleep(1)
-        comic_soup = BeautifulSoup(comic_r.content, 'lxml')
+        comic_soup = BeautifulSoup(comic_r.content, 'html.parser')
 
         title = comic_soup.select_one('div.page-book__main > div:first-of-type > h1').text
 

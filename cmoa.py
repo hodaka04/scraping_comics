@@ -23,7 +23,7 @@ urls = ['https://www.cmoa.jp/search/purpose/ranking/all/',
 def ranking(url, unwanted_patterns):
     r = requests.get(url)
     sleep(1)
-    soup = BeautifulSoup(r.content, 'lxml')
+    soup = BeautifulSoup(r.content, 'html.parser')
 
 
     comics = soup.select('li.search_result_box')
