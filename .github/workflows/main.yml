@@ -1,5 +1,5 @@
 # ワークフロー名
-name: ranking_update
+name: update
 
 # 発火タイミング
 on:
