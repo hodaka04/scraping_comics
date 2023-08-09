@@ -8,7 +8,6 @@ import gspread
 from google.oauth2.service_account import Credentials
 import datetime
 from gspread_dataframe import set_with_dataframe
-import os
 
 # webdriverの設定
 get_driver = GetChromeDriver()
