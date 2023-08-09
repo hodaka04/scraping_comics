@@ -8,12 +8,16 @@ import gspread
 from google.oauth2.service_account import Credentials
 import datetime
 from gspread_dataframe import set_with_dataframe
+import os
 
 # webdriverの設定
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# chromedriverの相対パスを指定
+chromedriver_path = os.path.join(current_dir, 'chromedriver.exe')
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
 options.add_argument('--incognito')
-service = Service('chromedriver.exe')
+service = Service(chromedriver_path)
 driver = webdriver.Chrome(
     service=service,
     options=options)
