@@ -26,8 +26,8 @@ jobs:
           pip install google
           pip install requests
           pip install gspread-dataframe
-          pip install selenium
-          pip install bs4
+          pip install selenium==4.1.0
+          pip install bs4==4.11.1
       - name: Run script
         run: |
          # 各種pythonファイルの実行
