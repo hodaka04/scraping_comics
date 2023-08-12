@@ -3,9 +3,9 @@ name: update
 
 # 発火タイミング
 on:
-  push:
+  schedule:
+    - cron: '0 00 * * *'
   
-
 jobs:
   build:
     # Ubuntuの最新版環境内で処理
