@@ -36,3 +36,4 @@ jobs:
           python ameba.py
           python cmoa.py
           python ebookjapan.py
+          python dmm.py
