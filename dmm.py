@@ -115,6 +115,8 @@ def db_update():
 # 関数の実行
 db_update()
 
+driver.quit()
+
 
 
 
